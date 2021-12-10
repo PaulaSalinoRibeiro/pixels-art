@@ -62,24 +62,15 @@ function fillColorSelected(event){
     
 }
 
+let btn = document.querySelector('#clear-board');
+btn.addEventListener('click', clearBoard);
 
+function clearBoard(){
+    let pixels = document.querySelectorAll('.pixel');
+    for(let index = 0; index < pixels.length; index += 1){
+        pixels[index].style.backgroundColor = 'rgb(255, 255, 255)'
+    }
+}
 
-// Resert board
-
-/* let btn = document.createElement('button');
-let sectionBtn = document.querySelector('#section-btn');
-sectionBtn.appendChild(btn);
-btn.id ='clear-board'
-btn.innerText = 'Limpar'
-
-btn.addEventListener('click', resertBoard);
-
-function resertBoard(event){
-    let board = document.getElementsByClassName('pixel');
-      for(let index = 0; index < board.length; index += 1){
-        board[index].style.backgroundColor = 'rgb(255, 255, 255)'   
-    } 
-    
-} */
 
 
