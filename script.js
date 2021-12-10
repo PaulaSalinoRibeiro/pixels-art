@@ -62,22 +62,7 @@ function fillColorSelected(event){
     
 }
 
-// Fill board 
-/* 
-    let board = document.querySelector('#pixel-board');  
-    board.addEventListener('click', fillColor);    
-    
-    function fillColor(event){
-        event.target.style.backgroundColor =  ''
-    } */
 
-/*     let colors = document.querySelectorAll('.color')
-    for(let index = 0; index < colors.length; index += 1){
-        if(colors[index].className === 'color selected'){
-            console.log(colors[index].style.backgroundColor)
-        }
-    } */
-    
 
 // Resert board
 

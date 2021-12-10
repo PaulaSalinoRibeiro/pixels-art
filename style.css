@@ -1,4 +1,3 @@
-
 .color{
     display: inline-block;
     width: 40px;
@@ -25,4 +24,8 @@
     margin: 0;
     padding: 0;
     float: left;
+}
+
+button{
+    margin: 2px;
 }
