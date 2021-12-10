@@ -52,7 +52,15 @@ function changeSelected(event){
     event.target.className = 'color selected'
 }
 
+let pixelsBoard = document.querySelector('#pixel-board');
+pixelsBoard.addEventListener('click', fillColorSelected);
 
+function fillColorSelected(event){
+    let setColor = document.querySelector('.selected');
+    let color = setColor.style.backgroundColor;
+    event.target.style.backgroundColor = color;
+    
+}
 
 // Fill board 
 /* 
@@ -62,26 +70,6 @@ function changeSelected(event){
     function fillColor(event){
         event.target.style.backgroundColor =  ''
     } */
-
-
-    
-
-/*     function creatPaletteColors(color){
-        let sectionColors = document.getElementById('color-palette');
-        let div = document.createElement('div');
-        sectionColors.appendChild(div);
-        div.className = 'color'
-        div.style.backgroundColor = color
-    } */
-
-  /*   creatPaletteColors('black');
-    creatPaletteColors('purple');
-    creatPaletteColors('red');
-    creatPaletteColors('green');
-
-    let sectionColors = document.getElementById('color-palette');
-    console.log(sectionColors); */
-
 
 /*     let colors = document.querySelectorAll('.color')
     for(let index = 0; index < colors.length; index += 1){
