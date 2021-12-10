@@ -14,8 +14,19 @@ createdColorPalette('purple');
 createdColorPalette('red');
 createdColorPalette('green');
 
+colorPalette.firstChild.className = 'color selected'
 
+let container = document.getElementById('container');
+let pixelBoard = document.createElement('div');
+container.appendChild(pixelBoard);
 
+pixelBoard.id = 'pixel-board';
+
+function createdPixel(){
+    let div = document.createElement('div');
+    pixelBoard.appendChild(div);
+    div.className = 'pixel';
+}
 
 
 
