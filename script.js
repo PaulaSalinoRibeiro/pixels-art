@@ -19,7 +19,6 @@ colorPalette.firstChild.className = 'color selected'
 let container = document.getElementById('container');
 let pixelBoard = document.createElement('div');
 container.appendChild(pixelBoard);
-
 pixelBoard.id = 'pixel-board';
 
 function createdPixel(){
@@ -28,10 +27,15 @@ function createdPixel(){
     div.className = 'pixel';
 }
 
+function createdPixelsColuns(num){
+    for(let index = 0; index < num; index +=1){
+        createdPixel();
+    }
+}
 
-
-
-
+ for(let index = 0; index < 5; index += 1){
+    createdPixelsColuns(5);
+}  
 
 
 
