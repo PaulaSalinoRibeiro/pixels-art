@@ -10,9 +10,19 @@ function createdColorPalette(color){
 }
 
 createdColorPalette('black');
-createdColorPalette('purple');
-createdColorPalette('red');
-createdColorPalette('green');
+
+function getRandomColor() {         // ref.: https://stackoverflow.com/questions/1484506/random-color-generator
+    let letters = '0123456789ABCDEF'; 
+    let color = '#';
+    for (let index = 0; index < 6; index += 1) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+createdColorPalette(getRandomColor());
+createdColorPalette(getRandomColor());
+createdColorPalette(getRandomColor());
 
 colorPalette.firstChild.className = 'color selected'
 
@@ -27,9 +37,13 @@ function createdPixel(){
     div.className = 'pixel';
 }
 
-/*   for(let index = 0; index < 25; index += 1){
-    createdPixel(index);
- }  */
+function createdPixelsBoard(num){
+    for(let index = 0; index < num; index += 1){
+        createdPixel(index);
+     }  
+}
+
+createdPixelsBoard(25);
 
 let selectColorBlack = document.querySelector('.selected');
 localStorage.setItem('selectColor', 'black');
@@ -70,8 +84,9 @@ let  input = document.createElement('input');
 divButtons.appendChild(input);
 input.type = 'number';
 input.id = 'board-size';
-input.min = '5';
+input.min = '0';
 input.max = '50';
+
 
 let buttonVQV = document.createElement('button');
 divButtons.appendChild(buttonVQV);
@@ -80,15 +95,25 @@ buttonVQV.innerText = 'VQV';
 
 buttonVQV.addEventListener('click', newBoard);
 
-function newBoard(){
+ function newBoard(){
 
     let board = document.getElementById('pixel-board');
     let input = document.getElementById('board-size');
 
     let width = input.value*42;    
     board.style.width = width + 'px';
-    
-    for(let index = 0; index < (input.value**2); index += 1){
-        createdPixel(index);
-     }
-}
+      
+   if(input.value === ''){
+       alert('Board inválido!');
+   }
+
+   let pixels = document.querySelectorAll('.pixel');
+   for(let index = 0; index < pixels.length; index += 1){
+       pixelBoard.removeChild(pixels[index]);
+   }
+
+   num = input.value**2;
+   createdPixelsBoard(num);
+} 
+
+
