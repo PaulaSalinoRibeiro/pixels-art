@@ -27,15 +27,22 @@ function createdPixel(){
     div.className = 'pixel';
 }
 
-function createdPixelsColuns(num){
-    for(let index = 0; index < num; index +=1){
-        createdPixel();
+for(let index = 0; index < 5; index += 1){
+
+    for(let index = 0; index < 5; index += 1){
+        createdPixel(index);
     }
 }
 
- for(let index = 0; index < 5; index += 1){
+/* function createdPixelsColuns(num){
+    for(let index = 0; index < num; index +=1){
+        createdPixel();
+    }
+} */
+
+/*  for(let index = 0; index < 5; index += 1){
     createdPixelsColuns(5);
-}  
+}  */ 
 
 
 let selectColorBlack = document.querySelector('.selected');
