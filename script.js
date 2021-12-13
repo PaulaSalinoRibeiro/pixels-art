@@ -27,23 +27,9 @@ function createdPixel(){
     div.className = 'pixel';
 }
 
-for(let index = 0; index < 5; index += 1){
-
-    for(let index = 0; index < 5; index += 1){
-        createdPixel(index);
-    }
-}
-
-/* function createdPixelsColuns(num){
-    for(let index = 0; index < num; index +=1){
-        createdPixel();
-    }
-} */
-
-/*  for(let index = 0; index < 5; index += 1){
-    createdPixelsColuns(5);
-}  */ 
-
+/*   for(let index = 0; index < 25; index += 1){
+    createdPixel(index);
+ }  */
 
 let selectColorBlack = document.querySelector('.selected');
 localStorage.setItem('selectColor', 'black');
@@ -79,5 +65,30 @@ function clearBoard(){
     }
 }
 
+let divButtons = document.getElementById('buttons');
+let  input = document.createElement('input');
+divButtons.appendChild(input);
+input.type = 'number';
+input.id = 'board-size';
+input.min = '5';
+input.max = '50';
 
+let buttonVQV = document.createElement('button');
+divButtons.appendChild(buttonVQV);
+buttonVQV.id = 'generate-board';
+buttonVQV.innerText = 'VQV';
 
+buttonVQV.addEventListener('click', newBoard);
+
+function newBoard(){
+
+    let board = document.getElementById('pixel-board');
+    let input = document.getElementById('board-size');
+
+    let width = input.value*42;    
+    board.style.width = width + 'px';
+    
+    for(let index = 0; index < (input.value**2); index += 1){
+        createdPixel(index);
+     }
+}
