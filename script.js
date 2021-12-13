@@ -37,13 +37,13 @@ function createdPixel(){
     div.className = 'pixel';
 }
 
-function createdPixelsBoard(num){
+ function createdPixelsBoard(num){
     for(let index = 0; index < num; index += 1){
         createdPixel(index);
      }  
 }
 
-createdPixelsBoard(25);
+createdPixelsBoard(25); 
 
 let selectColorBlack = document.querySelector('.selected');
 localStorage.setItem('selectColor', 'black');
@@ -84,23 +84,22 @@ let  input = document.createElement('input');
 divButtons.appendChild(input);
 input.type = 'number';
 input.id = 'board-size';
-input.min = '0';
-input.max = '50';
-
+input.min = '1';
+input.max = '90';
 
 let buttonVQV = document.createElement('button');
 divButtons.appendChild(buttonVQV);
 buttonVQV.id = 'generate-board';
 buttonVQV.innerText = 'VQV';
 
-buttonVQV.addEventListener('click', newBoard);
+ buttonVQV.addEventListener('click', newBoard);
 
  function newBoard(){
 
     let board = document.getElementById('pixel-board');
     let input = document.getElementById('board-size');
 
-    let width = input.value*42;    
+    let width = input.value*42.0;    
     board.style.width = width + 'px';
       
    if(input.value === ''){
@@ -109,11 +108,11 @@ buttonVQV.addEventListener('click', newBoard);
 
    let pixels = document.querySelectorAll('.pixel');
    for(let index = 0; index < pixels.length; index += 1){
-       pixelBoard.removeChild(pixels[index]);
+       pixelBoard.removeChild(pixels[index]); 
    }
 
-   num = input.value**2;
-   createdPixelsBoard(num);
-} 
+    num = input.value**2;
+   createdPixelsBoard(num); 
+}  
 
 
