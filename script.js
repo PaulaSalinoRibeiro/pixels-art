@@ -99,12 +99,18 @@ buttonVQV.innerText = 'VQV';
     let board = document.getElementById('pixel-board');
     let input = document.getElementById('board-size');
 
+    if(input.value === ''){
+        alert('Board inválido!');
+    }
+
+    if(input.value < 5){
+        input.value = 5;
+    } else if (input.value > 50){
+        input.value = 50
+    }
+
     let width = input.value*42.0;    
     board.style.width = width + 'px';
-      
-   if(input.value === ''){
-       alert('Board inválido!');
-   }
 
    let pixels = document.querySelectorAll('.pixel');
    for(let index = 0; index < pixels.length; index += 1){
