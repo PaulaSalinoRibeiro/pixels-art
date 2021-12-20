@@ -8,8 +8,8 @@ body {
 #title {
     color: white;
     font-family: monospace;
-
 }
+
 #container {
     /* https://qastack.com.br/programming/9862167/positioning-div-element-at-center-of-screen */
     position: fixed;
