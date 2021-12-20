@@ -1,11 +1,38 @@
-.color{
+body {
+    background-image: url('./img/img1.jpg');
+    background-position: center;
+    background-repeat: cover;
+    background-attachment: fixed;
+}
+
+#title {
+    color: white;
+    font-family: monospace;
+
+}
+#container {
+    /* https://qastack.com.br/programming/9862167/positioning-div-element-at-center-of-screen */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#buttons {
+    margin-left: 8%;
+}
+
+.color {
     display: inline-block;
     width: 40px;
     height: 40px;
     border: 1px solid black;
+    margin-left: 5%;
+    border-radius: 50%;
 }
 
-.pixel{
+.pixel {
     border: 1px solid black; 
     width: 40px;
     height: 40px;
@@ -13,19 +40,18 @@
     display: inline-block;
 }
 
- #pixel-board{
+ #pixel-board {
     background-color: rgb(255, 255, 255);
     height: 210px;
-    width: 212px;  
-    border: 1px solid black; 
+    width: 210px;  
+    border: 1px solid black;
 } 
 
-    #pixel-board div{ /* ref.: https://stackoverflow.com/questions/18315507/remove-margin-between-divs*/
-    margin: 0;
+#pixel-board div { /* ref.: https://stackoverflow.com/questions/18315507/remove-margin-between-divs*/
     padding: 0;
     float: left; 
 }  
 
-button{
+button {
     margin: 2px;
 }
